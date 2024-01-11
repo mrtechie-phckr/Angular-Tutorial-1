@@ -1,0 +1,19 @@
+.primary{
+    color: rgb(5, 245, 1);
+}
+
+.secondary{
+    color: blue;
+}
+
+.big{
+    font-size: 100px;
+}
+
+.small{
+    font-size: 50px;
+}
+
+.italics{
+    font-style: italic;
+}
