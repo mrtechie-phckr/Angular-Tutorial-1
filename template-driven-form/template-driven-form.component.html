@@ -1,0 +1,79 @@
+
+
+    
+    <div class="container">
+        <h2>TEMPLATE DRIVEN FORM</h2>
+        <form #contactForm="ngForm" (submit)="onSubmit(contactForm)">
+            <!-- Text input field -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required [(ngModel)]="contact.name">
+    
+            <br>
+    
+            <!-- Email input field -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required [(ngModel)]="contact.email">
+    
+            <br>
+    
+            <!-- Password input field -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required ngModel>
+    
+            <br>
+    
+            <!-- Radio buttons -->
+            <p>Gender:</p>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male" required ngModel>
+    
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female" required ngModel>
+    
+            <br>
+    
+            <!-- Checkbox -->
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes" ngModel>
+            <label for="subscribe">Subscribe to newsletter</label>
+    
+            <br>
+    
+            <!-- Dropdown/select menu -->
+            <label for="country">Country:</label>
+            <select id="country" name="country" ngModel>
+                <option value="">Select</option>
+                <option [ngValue]= "country.name" *ngFor=" let country of countryList">{{country.name}}</option>
+                <!-- Add more options as needed -->
+            </select>
+    
+            <br>
+            <div ngModelGroup="address">
+                <p>
+                    <label for="city">city</label>
+                    <input type="text" name="city" ngModel>
+                </p>
+                <p>
+                    <label for="street">street</label>
+                    <input type="text" name="street" ngModel>
+                </p>
+                <p>
+                    <label for="pincode">pincode</label>
+                    <input type="text" name="pincode" ngModel>
+                </p>
+            </div>
+    
+            <!-- Textarea for longer text input -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+    
+            <br>
+    
+            <!-- Submit button -->
+            <input type="submit" value="Submit">
+        </form>
+    
+
+    </div>
+
+   
+
